@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased font-sans transition-colors duration-200;
+    font-size: 18px;
+  }
+
+  /* Focus ring for high accessibility */
+  *:focus-visible {
+    @apply outline-none ring-4 ring-amber-500 ring-offset-2;
+  }
+}
+
+/* Elderly Accessibility Font Scaler */
+.font-scale-normal {
+  font-size: 17px;
+}
+.font-scale-large {
+  font-size: 20px;
+}
+.font-scale-xlarge {
+  font-size: 23px;
+}
+
+/* High Contrast Mode */
+.high-contrast {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+.high-contrast .bg-white,
+.high-contrast .bg-slate-50,
+.high-contrast .bg-slate-100,
+.high-contrast .bg-teal-50,
+.high-contrast .bg-amber-50 {
+  background-color: #121212 !important;
+  color: #ffffff !important;
+  border-color: #ffff00 !important;
+}
+
+.high-contrast button {
+  border: 2px solid #ffff00 !important;
+}
+
+.high-contrast .text-teal-800,
+.high-contrast .text-teal-700,
+.high-contrast .text-slate-700,
+.high-contrast .text-slate-600 {
+  color: #ffffff !important;
+}
+
+.high-contrast .bg-teal-700,
+.high-contrast .bg-teal-600,
+.high-contrast .bg-amber-600 {
+  background-color: #ffff00 !important;
+  color: #000000 !important;
+  font-weight: bold;
+}
