@@ -23,14 +23,6 @@ export function App() {
     }
   }, [highContrast]);
 
-  // Backend connection check
-  useEffect(() => {
-    fetch('https://dementia-care-platform.onrender.com/')
-      .then((res) => res.json())
-      .then((data) => setApiStatus(`🟢 ${data.message} (${data.database})`))
-      .catch(() => setApiStatus('🔴 Backend Not Connected! Make sure FastAPI server is running.'));
-  }, []);
-
   const fontClass = fontSize === 'xlarge' 
     ? 'font-scale-xlarge' 
     : fontSize === 'large' 
@@ -50,8 +42,6 @@ export function App() {
         highContrast={highContrast}
         setHighContrast={setHighContrast}
       />
-
-      
 
       {/* Main Content Area */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-8">
