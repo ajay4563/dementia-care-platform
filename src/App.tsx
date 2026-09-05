@@ -26,7 +26,7 @@ export function App() {
 
   // Backend connection check
   useEffect(() => {
-    fetch('http://127.0.0.1:8000/')
+    fetch('https://dementia-care-platform.onrender.com/')
       .then((res) => res.json())
       .then((data) => setApiStatus(`🟢 ${data.message} (${data.database})`))
       .catch(() => setApiStatus('🔴 Backend Not Connected! Make sure FastAPI server is running.'));
