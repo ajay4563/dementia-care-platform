@@ -13,8 +13,7 @@ export function App() {
   const [activeSection, setActiveSection] = useState<SectionType>('home');
   const [fontSize, setFontSize] = useState<'normal' | 'large' | 'xlarge'>('large');
   const [highContrast, setHighContrast] = useState<boolean>(false);
-  const [apiStatus, setApiStatus] = useState<string>('Checking backend connection...');
-
+  
   // Sync high contrast mode class to root body
   useEffect(() => {
     if (highContrast) {
