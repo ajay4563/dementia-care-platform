@@ -13,8 +13,7 @@ export function App() {
   const [activeSection, setActiveSection] = useState<SectionType>('home');
   const [fontSize, setFontSize] = useState<'normal' | 'large' | 'xlarge'>('large');
   const [highContrast, setHighContrast] = useState<boolean>(false);
-  
-  // Sync high contrast mode class to root body
+
   useEffect(() => {
     if (highContrast) {
       document.documentElement.classList.add('high-contrast');
@@ -33,7 +32,6 @@ export function App() {
     <div className={`min-h-screen flex flex-col transition-colors duration-200 ${fontClass} ${
       highContrast ? 'bg-black text-white' : 'bg-slate-50 text-slate-900'
     }`}>
-      {/* Top Navbar */}
       <Navbar
         activeSection={activeSection}
         setActiveSection={setActiveSection}
@@ -43,7 +41,6 @@ export function App() {
         setHighContrast={setHighContrast}
       />
 
-      {/* Main Content Area */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-8">
         {activeSection === 'home' && (
           <HomePage setActiveSection={setActiveSection} highContrast={highContrast} />
@@ -65,7 +62,6 @@ export function App() {
         )}
       </main>
 
-      {/* Footer */}
       <Footer setActiveSection={setActiveSection} highContrast={highContrast} />
     </div>
   );
